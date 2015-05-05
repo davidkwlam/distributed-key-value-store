@@ -7,7 +7,6 @@ import java.net.SocketException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 
-//import com.davidkwlam.kvstore.Config;
 import com.davidkwlam.kvstore.Utils;
 import com.davidkwlam.kvstore.store.StoreMessage.StoreResponseType;
 
@@ -84,11 +83,7 @@ public class Store {
 		return StoreMessage.createResponse(id, response, currVal.version, currVal.value);
 	}
 
-	private byte[] put(byte[] id, byte[] key, byte[] val, int ver) {
-//		if (_store.size() > Config.KVSTORE_SIZE) {
-//			return StoreMessage.createResponse(id, StoreResponseType.OUT_OF_SPACE);
-//		}
-		
+	private byte[] put(byte[] id, byte[] key, byte[] val, int ver) {		
 		String keyString = Utils.hexString(key);
 		
 		if (ver > 0) { // this is a repair

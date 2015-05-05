@@ -24,12 +24,12 @@ public class Heartbeats {
 		ArrayList<String> hostnames = Utils.readNodesFile(args[0]);
 		ArrayList<InetAddress> nodes = new ArrayList<>();
 		for (String hostname : hostnames) {
-//			try {
+			try {
 				nodes.add(InetAddress.getByName(hostname));
-//			} catch (UnknownHostException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
+			} catch (UnknownHostException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		UdpClient client = new UdpClient(3, 1250);
