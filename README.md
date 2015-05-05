@@ -1,3 +1,3 @@
 # Distributed Key-Value Store
 
-A distributed key-value store that implements quorum-based replication and read-repair.
+A distributed key-value store that implements quorum consensus replication and read-repair.
