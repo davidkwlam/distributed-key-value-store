@@ -2,6 +2,8 @@
 
 A distributed key-value store that implements quorum consensus replication and read-repair.
 
+This was a [term project](https://docs.google.com/document/d/1NpzQsif_FLVapuBTP7sVG_73gfetzl8TTC8WiMWVIrU/pub) for a [distributed systems course](https://docs.google.com/document/d/1aMDAbNkqoaPDwOpU1lhl1ivfweAcnOJ_Lb-auOgsp14/pub) taken at UBC.
+
 ## Overall design
 
 This system is comprised of two main components: the coordinator and the store. Coordinators handle client requests and stores handle routed requests from coordinators. Each node is both a coordinator and a store.
