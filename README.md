@@ -11,7 +11,9 @@ Coordinator:
 The coordinator accepts requests from clients and forwards them to the store on the three replicas responsible for the request’s key. It is comprised of:
 
 Coordinator.java
+
 Monitor.java
+
 Node.java
 
 The coordinator class listens for client requests and routes them to the replicas. The monitor class keeps track of node joins and failures, as well as providing the routing information for the coordinator. The node class is used to keep track of the current status of a node.
@@ -21,7 +23,9 @@ Store:
 The store is a simple wrapper class around a ConcurrentHashMap that keeps track of stores key-value pairs along with the version number. Stores process requests from coordinators. It is comprised of:
 
 Store.java
+
 StoreClient.java
+
 StoreMessage.java
 
 Coordinators forward requests to stores using the StoreClient class via UDP messaging. These messages are the same as the messages sent from clients to the coordinator except they include an extra field for the key-value version. The StoreMessage class is made up of helper methods for creating these messages.
